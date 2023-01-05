@@ -54,3 +54,32 @@ for (let i = 0; i < bills.length; i++) {
 }
 console.log(tips);
 console.log(totals);
+
+// Challenge 3: Arrays, Age Calculator
+
+const alexArray = [
+  'Alex',
+  'Mare',
+  2994 - 1000,
+  'Aspiring web developer!',
+  ['Jackson', 'Sarah', 'Mark'],
+  true,
+];
+
+const types = [];
+
+for (let i = 0; i < alexArray.length; i++) {
+  console.log(alexArray[i], typeof alexArray[i]);
+
+  types.push(typeof alexArray[i]);
+}
+console.log(types);
+
+const years = [1995, 1994, 2002, 1954, 2021];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2023 - years[i]);
+}
+
+console.log(ages);
