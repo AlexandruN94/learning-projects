@@ -116,3 +116,29 @@ mercedes.accelerate();
 bmw.break();
 console.log(bmw.break(this.slowDown));
 console.log(break(this.slowDown));
+
+
+// Codinging challenge 6 - (Functions, calculate average scores)
+
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+const checkWinner = (avgDolphins, avgKoalas) => {
+  let result = '';
+  if (avgDolphins === avgKoalas) {
+    console.log('The game ends with a draw!');
+    return;
+  }
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+    return;
+  }
+  if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+    return;
+  }
+  console.log('No team wins.');
+};
+
+const averageDolphins = calcAverage(85, 54, 71);
+const averageKoalas = calcAverage(23, 34, 27);
+checkWinner(averageDolphins, averageKoalas);
