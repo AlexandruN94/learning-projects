@@ -142,3 +142,26 @@ const checkWinner = (avgDolphins, avgKoalas) => {
 const averageDolphins = calcAverage(85, 54, 71);
 const averageKoalas = calcAverage(23, 34, 27);
 checkWinner(averageDolphins, averageKoalas);
+
+// Coding challenge 7 (percentage of population)
+
+const percentageOfWorld3 = population => (population / 7900) * 100;
+
+const populationTaiwan = percentageOfWorld3(23);
+console.log(
+  `Taiwan's population is ${populationTaiwan.toFixed(
+    2
+  )} % of the world's population`
+);
+const populationZimbabwe = percentageOfWorld3(15);
+console.log(
+  `Zimbabwe's population is ${populationZimbabwe.toFixed(
+    2
+  )} % of the world's population`
+);
+const populationFrance = percentageOfWorld3(67);
+console.log(
+  `France's population is ${populationFrance.toFixed(
+    2
+  )} % of the world's population`
+);
