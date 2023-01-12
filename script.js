@@ -165,3 +165,39 @@ console.log(
     2
   )} % of the world's population`
 );
+
+// 8 Scoping in practice:
+
+function calcAge(birthYear) {
+  const age = 2023 - birthYear;
+
+  function printAge() {
+    let output = `${firstName} is ${age} years old and was born in ${birthYear}.`;
+    console.log(output);
+
+    if (birthYear >= 1981 && birthYear <= 1996) {
+      // Creating NEW variable with the same name as outer scope's variable
+      const firstName = 'Smith';
+
+      // Reassigning outer scope's variable
+      output = 'Hello!';
+      const str = `And you are a millenial, ${firstName}!`;
+      console.log(str);
+
+      function calcAge(birthYear) {
+        return birthYear;
+      }
+      console.log(calcAge(1994));
+      console.log(firstName);
+    }
+    console.log(output);
+  }
+
+  console.log(firstName);
+
+  printAge();
+  return age;
+}
+
+const firstName = 'Mark';
+calcAge(1990);
