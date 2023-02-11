@@ -1,8 +1,7 @@
-// function reversedStringMethods(str) {
-//   return str.split('').reverse().join('');
-
-// }
-// reversedStringMethods('Hello');
+function reversedStringMethods(str) {
+  return str.split('').reverse().join('');
+}
+reversedStringMethods('Hello');
 
 function reversedStringFor(str) {
   let string = '';
@@ -12,4 +11,4 @@ function reversedStringFor(str) {
   return string;
 }
 
-console.log(reversedStringFor('Hello'));
+reversedStringFor('Hello');
