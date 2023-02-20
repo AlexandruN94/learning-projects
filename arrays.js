@@ -27,3 +27,14 @@ const checkDogs = function (dogsJulia, dogsKate) {
   });
 };
 checkDogs();
+
+// Challenge #2 - Array Methods (.map, .filter, .reduce)
+
+const calcAverageHumanAge = function (ages) {
+  const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
+  const filteredAges = humanAges.filter(age => age > 18);
+  const reducedAges =
+    filteredAges.reduce((acc, age) => acc + age, 0) / filteredAges.length;
+  return reducedAges;
+};
+console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
