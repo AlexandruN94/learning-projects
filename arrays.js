@@ -38,3 +38,64 @@ const calcAverageHumanAge = function (ages) {
   return reducedAges;
 };
 console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
+
+// Challenge #3 - Final Array Methods Practice
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+// Task 1:
+dogs.forEach(function (el) {
+  return (el.recFood = Math.trunc(el.weight ** 0.75 * 28));
+});
+console.log(dogs);
+
+// Task 2:
+
+const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
+
+console.log(dogSarah);
+console.log(
+  `Sarah's dog is eating too ${
+    dogSarah.curFood > dogSarah.recFood ? 'much' : 'little'
+  }.`
+);
+
+// Task 3
+
+const ownersEatTooMuch = dogs
+  .filter(dog => dog.curFood > dog.recFood)
+  .flatMap(dog => dog.owners);
+
+const ownersEatTooLittle = dogs
+  .filter(dog => dog.curFood < dog.recFood)
+  .flatMap(dog => dog.owners);
+
+// Task 4
+
+console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much.`);
+console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little.`);
+
+// Task 5
+
+// console.log(dogs.some(dog => dog.curFood === dog.recFood));
+
+// Task 6
+
+const checkEatingOkay = dog =>
+  dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1;
+console.log(dogs.some(checkEatingOkay));
+
+// Task 7
+
+console.log(dogs.filter(checkEatingOkay));
+
+// Task 8
+
+const dogsSorted = dogs.slice().sort((a, b) => a.recFood - b.recFood);
+
+console.log(dogsSorted);
