@@ -99,3 +99,7 @@ console.log(dogs.filter(checkEatingOkay));
 const dogsSorted = dogs.slice().sort((a, b) => a.recFood - b.recFood);
 
 console.log(dogsSorted);
+
+const diceRolls = Array.from({ length: 100 }, (_, i) =>
+  Math.trunc(Math.random() * 6 + 1)
+);
